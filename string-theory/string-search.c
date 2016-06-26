@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <string.h>
-#include <stdlib.h>
+
 
 char tracks[][80] = {"I left my heart in Harvard Med School", "Newark, Newark - a wonderful town", "Dancing with a Dork", "From here to maternity", "The girl from Iwo Jima"};
 
@@ -21,7 +21,10 @@ int main()
 {	
 	char search_for[80];
 	printf("Search for: ");
-	fgets(search_for, 80, stdin);
+	scanf("%79s", search_for);
+	
+	//fgets() doesnt work on my PC so I used scanf
+	//fgets(search_for, 80, stdin);
 		
 	find_track(search_for);
 	
