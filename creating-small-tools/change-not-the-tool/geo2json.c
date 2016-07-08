@@ -1,0 +1,54 @@
+#include <stdio.h>
+
+int main()
+{
+	float latitude;
+	float longitude;
+	char info[80];
+	
+	int started = 0;
+	
+	
+	puts("Data=[");
+	while(scanf("%f %f %79[^\n]", &latitude, &longitude, info) == 3)
+	{
+		if(started)
+			printf(",\n");
+		else
+			started = 1;
+		
+		
+		if((latitude < -90) || (latitude > 90))
+		{
+			// Error with status 2
+			fprintf(stderr, "Invalid latitude: %f\n", latitude);
+			return 2;
+		}
+		if((longitude < -180) || (longitude > 180))
+		{
+			// Error with status 2
+			fprintf(stderr, "Invalid longitude: %f\n", longitude);
+			return 2;
+		}
+		printf("(latitude: %f, longitude: %f, info: '%s')", latitude, longitude, info);
+	}
+	
+	puts("\n]");
+	
+	return 0;
+}
+
+/*
+	The user won’t want to type in all
+	of the data if it’s already stored in a file somewhere. And if the
+	data in JSON format is just displayed on the screen, there’s no
+	way the map within the web page will be able to read it.
+	You need to make the program work with files. But how do
+	you do that? If you want to use files instead of the keyboard
+	and the display, what code will you have to change? Will you
+	have to change any code at all?
+	
+	Is there a way of making the program
+	use files without changing code?
+	Without even recompiling it?
+*/
