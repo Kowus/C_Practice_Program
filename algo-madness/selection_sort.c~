@@ -21,7 +21,7 @@ void print_array(void)
 	}
 	
 	// Print Blank Line for readability
-	printf(" ");
+	printf(" \n");
 }
 
 void swap(int index, int new_index)
@@ -38,7 +38,7 @@ void swap(int index, int new_index)
 
 void selection_sort()
 {
-	printf("\n\nSelection Sort\n\n");
+	printf("\nSelection Sort\n\n");
 	// Check each value in the array
 	for(int i = 0; i < NUM_VALUES; i++)
 	{
