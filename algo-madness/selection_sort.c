@@ -85,7 +85,7 @@ int main(void)
 
 /*
 
-Algorith Explanation
+Algorithm Explanation
 							=============================================
 	 The actual selection sort algorithm follows this set of rules:
 		* For all elements in the array
